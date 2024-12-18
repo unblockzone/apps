@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps</title>
 
+    <!-- Favicon link -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
+
+    <style>
+        /* Prevent horizontal and vertical scrolling */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: black;
+            font-family: 'Bowlby One', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+        }
+
+        header {
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 0;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background-color: black;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: scale(1.1);
+            background-color: black;
+            box-shadow: 0px 0px 15px 4px #008CFF;
+            color: #008CFF;
+        }
+
+        /* Logo on the top-right corner */
+        .logo-container {
+            width: 40px;
+            height: 40px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/61/61457.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.2); /* Zoom effect on hover */
+        }
+
+        /* Snow effect container */
+        .snow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind all content */
+            pointer-events: none; /* Allow interaction with elements above */
+        }
+
+        .snowflake, .snowball {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 10px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(110vh); /* Fall beyond viewport height */
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .nav-buttons {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .logo-container {
+                width: 30px; /* Smaller logo for mobile */
+                height: 30px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="https://unblockzone.github.io" style="text-decoration: none;">
+            <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
+        </a>
+        <div class="nav-buttons">
+            <a href="https://unblockzone.github.io/apps" class="nav-button">APPS</a>
+            <a href="https://unblockzone.github.io/games" class="nav-button">GAMES</a>
+            <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
+            <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
+            <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
+        </div>
+        <div class="logo-container" title="Logo"></div>
+    </header>
+
+    <div class="snow-container" id="snowContainer"></div> <!-- Snow effect -->
+
+    <script>
+        // Snow effect generator
+        const snowContainer = document.getElementById('snowContainer');
+
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 2 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.opacity = Math.random() * 0.8 + 0.2;
+
+            snowContainer.appendChild(snowflake);
+            setTimeout(() => snowflake.remove(), 5000);
+        }
+
+        function createSnowball() {
+            const snowball = document.createElement('div');
+            snowball.classList.add('snowball');
+            snowball.textContent = '⚪';
+            snowball.style.left = Math.random() * 100 + 'vw';
+            snowball.style.animationDuration = Math.random() * 2 + 1 + 's';
+
+            snowContainer.appendChild(snowball);
+            setTimeout(() => snowball.remove(), 5000);
+        }
+
+        setInterval(createSnowflake, 150);
+        setInterval(createSnowball, 100);
+    </script>
+</body>
+</html>
