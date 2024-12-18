@@ -96,6 +96,30 @@
             transform: scale(1.2); /* Zoom effect on hover */
         }
 
+        /* App icons container */
+        .apps-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .app-icon:hover {
+            transform: scale(1.2);
+        }
+
         /* Snow effect container */
         .snow-container {
             position: absolute;
@@ -145,6 +169,16 @@
                 width: 30px; /* Smaller logo for mobile */
                 height: 30px;
             }
+
+            .apps-container {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .app-icon {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -163,6 +197,14 @@
         </div>
         <div class="logo-container" title="Logo"></div>
     </header>
+
+    <!-- App icons -->
+    <div class="apps-container">
+        <a href="https://example.com/app1" class="app-icon" style="background-image: url('https://via.placeholder.com/150/FF5733');"></a>
+        <a href="https://example.com/app2" class="app-icon" style="background-image: url('https://via.placeholder.com/150/33FF57');"></a>
+        <a href="https://example.com/app3" class="app-icon" style="background-image: url('https://via.placeholder.com/150/5733FF');"></a>
+        <a href="https://example.com/app4" class="app-icon" style="background-image: url('https://via.placeholder.com/150/FFD700');"></a>
+    </div>
 
     <div class="snow-container" id="snowContainer"></div> <!-- Snow effect -->
 
