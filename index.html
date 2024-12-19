@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps</title>
+    <title>UnblockZone</title>
 
-    <!-- Favicon -->
+    <!-- Favicon link -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
-
     <style>
-        /* Reset styles and enable scrolling */
+        /* Prevent horizontal and vertical scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: auto;
+            overflow: hidden;
         }
 
         body {
@@ -27,6 +24,7 @@
             display: flex;
             flex-direction: column;
             text-align: center;
+            position: relative;
         }
 
         header {
@@ -41,9 +39,9 @@
         }
 
         h1 {
-            font-family: 'Bowlby One', sans-serif;
             font-size: 50px;
             margin: 0;
+            display: inline-block;
             transition: transform 0.3s ease;
         }
 
@@ -61,15 +59,15 @@
 
         .nav-buttons {
             display: flex;
-            gap: 20px;
+            gap: 20px; /* Increased gap between buttons */
         }
 
         .nav-button {
             background-color: black;
             color: white;
-            padding: 15px 25px;
+            padding: 15px 25px; /* Increased padding for larger size */
             border-radius: 20px;
-            font-size: 18px;
+            font-size: 18px; /* Increased font size */
             text-decoration: none;
             text-align: center;
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
@@ -77,37 +75,70 @@
 
         .nav-button:hover {
             transform: scale(1.1);
-            background-color: black;
-            box-shadow: 0px 0px 15px 4px #008CFF;
-            color: #008CFF;
+            background-color: black; /* Keep the background black */
+            box-shadow: 0px 0px 15px 4px #008CFF; /* Blue highlight with glow effect */
+            color: #008CFF; /* Change text color to blue */
         }
 
-        .logo {
-            width: 30px;
-            height: 30px;
-            transition: transform 0.3s ease;
+        .clock {
+            font-size: 20px; /* Slightly smaller font size */
+            color: white;
+            font-weight: bold;
+            background-color: #444;
+            padding: 5px 10px; /* Reduced padding to make the box smaller */
+            border-radius: 10px; /* Keeps the rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .logo:hover {
-            transform: scale(1.2);
+        .clock:hover {
+            transform: scale(1.2); /* Zoom effect on hover */
+            box-shadow: 0px 0px 15px 5px #008CFF; /* Glow effect on hover */
         }
 
+        /* Snow effect container */
+        .snow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind all content */
+            pointer-events: none; /* Allow interaction with elements above */
+        }
+
+        .snowflake, .snowball {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 10px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(110vh); /* Fall beyond viewport height */
+            }
+        }
+
+        /* Style for the squares */
         .square-container {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 20px; /* Adds space between squares */
+            margin-top: 30px; /* Adds margin for space under the header */
         }
 
         .square {
             width: 300px;
             height: 300px;
-            background-color: #444;
-            border-radius: 15px;
-            margin: 10px;
+            border-radius: 20px;
+            background-color: #333;
             overflow: hidden;
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
         .square img {
@@ -118,50 +149,113 @@
         }
 
         .square:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .square:hover img {
-            transform: scale(1.2);
+            transform: scale(1.1); /* Zoom effect on image */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .nav-buttons {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .clock {
+                font-size: 16px; /* Smaller clock for mobile */
+                padding: 3px 6px;
+            }
+
+            .square-container {
+                flex-direction: column; /* Stack the squares vertically */
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="https://unblockzone.github.io">
-            <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
-        </a>
+        <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
         <div class="nav-buttons">
-            <a href="https://unblockzone.github.io/apps" class="nav-button">APPS</a>
-            <a href="https://unblockzone.github.io/games" class="nav-button">GAMES</a>
-            <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
-            <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
+            <a href="https://your-apps-url.com" class="nav-button">APPS</a>
+            <a href="https://your-games-url.com" class="nav-button">GAMES</a>
+            <a href="https://your-proxies-url.com" class="nav-button">PROXIES</a>
+            <a href="https://your-exploits-url.com" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
         </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/61/61457.png" alt="Logo" class="logo">
+        <div id="clock" class="clock"></div>
     </header>
 
+    <!-- Square Links Section -->
     <div class="square-container">
-        <div class="square">
-            <a href="https://unblockzone.github.io/apps">
-                <img src="https://via.placeholder.com/300x300?text=Apps" alt="Apps">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games">
-                <img src="https://via.placeholder.com/300x300?text=Games" alt="Games">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/proxies">
-                <img src="https://via.placeholder.com/300x300?text=Proxies" alt="Proxies">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/exploits">
-                <img src="https://via.placeholder.com/300x300?text=Exploits" alt="Exploits">
-            </a>
-        </div>
+        <a href="https://your-first-link.com" class="square">
+            <img src="https://your-image-url.com/image1.jpg" alt="Square 1">
+        </a>
+        <a href="https://your-second-link.com" class="square">
+            <img src="https://your-image-url.com/image2.jpg" alt="Square 2">
+        </a>
+        <a href="https://your-third-link.com" class="square">
+            <img src="https://your-image-url.com/image3.jpg" alt="Square 3">
+        </a>
+        <a href="https://your-fourth-link.com" class="square">
+            <img src="https://your-image-url.com/image4.jpg" alt="Square 4">
+        </a>
     </div>
+
+    <div class="snow-container" id="snowContainer"></div> <!-- Snow effect -->
+
+    <script>
+        // Real-time clock
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Snow effect generator
+        const snowContainer = document.getElementById('snowContainer');
+
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 2 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.opacity = Math.random() * 0.8 + 0.2;
+
+            snowContainer.appendChild(snowflake);
+            setTimeout(() => snowflake.remove(), 5000);
+        }
+
+        function createSnowball() {
+            const snowball = document.createElement('div');
+            snowball.classList.add('snowball');
+            snowball.textContent = '⚪';
+            snowball.style.left = Math.random() * 100 + 'vw';
+            snowball.style.animationDuration = Math.random() * 2 + 1 + 's';
+
+            snowContainer.appendChild(snowball);
+            setTimeout(() => snowball.remove(), 5000);
+        }
+
+        setInterval(createSnowflake, 150);
+        setInterval(createSnowball, 100);
+    </script>
 </body>
 </html>
