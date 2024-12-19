@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps</title>
+    <title>Games & Apps</title>
 
     <!-- Favicon link -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
 
     <style>
-        /* Prevent horizontal and vertical scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow: auto;
         }
 
         body {
@@ -80,113 +79,54 @@
             color: #008CFF;
         }
 
-        /* Logo on the top-right corner */
-        .logo-container {
-            width: 40px;
-            height: 40px;
-            background-image: url('https://cdn-icons-png.flaticon.com/512/61/61457.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover {
-            transform: scale(1.2); /* Zoom effect on hover */
-        }
-
-        /* Snow effect container */
-        .snow-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0; /* Behind all content */
-            pointer-events: none; /* Allow interaction with elements above */
-        }
-
-        .snowflake, .snowball {
-            position: absolute;
-            top: -10px;
-            color: white;
-            font-size: 10px;
-            opacity: 0.8;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(110vh); /* Fall beyond viewport height */
-            }
-        }
-
-        /* App icons container */
-        .apps-container {
+        .square-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 50px;
-            margin: 50px auto;
             flex-wrap: wrap;
-            max-width: 100%;
+            margin-top: 20px;
         }
 
-        .app-icon {
+        .square {
             width: 300px;
             height: 300px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 30px;
+            background-color: #444;
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
             transition: transform 0.3s ease;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
         }
 
-        .app-icon:hover {
-            transform: scale(1.2); /* Zoom effect on hover */
+        .square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 40px;
-            }
+        .square:hover {
+            transform: scale(1.1);
+        }
 
-            .nav-buttons {
-                display: block;
-                text-align: center;
-                margin-top: 10px;
-            }
+        .square:hover img {
+            transform: scale(1.2);
+        }
 
-            .nav-button {
-                width: 100%;
-                margin-bottom: 10px;
-            }
+        .logo {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
 
-            .logo-container {
-                width: 30px;
-                height: 30px;
-            }
-
-            .apps-container {
-                gap: 20px;
-            }
-
-            .app-icon {
-                width: 200px;
-                height: 200px;
-            }
+        .logo:hover {
+            transform: scale(1.2);
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="https://unblockzone.github.io" style="text-decoration: none;">
+        <a href="https://unblockzone.github.io">
             <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
         </a>
         <div class="nav-buttons">
@@ -196,48 +136,57 @@
             <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
         </div>
-        <div class="logo-container" title="Logo"></div>
+        <img src="https://cdn-icons-png.flaticon.com/512/61/61457.png" alt="Logo" class="logo">
     </header>
 
-    <div class="apps-container">
-        <a href="https://example.com/app1" class="app-icon" style="background-image: url('https://via.placeholder.com/300/FF5733');"></a>
-        <a href="https://example.com/app2" class="app-icon" style="background-image: url('https://via.placeholder.com/300/33FF57');"></a>
-        <a href="https://example.com/app3" class="app-icon" style="background-image: url('https://via.placeholder.com/300/5733FF');"></a>
-        <a href="https://example.com/app4" class="app-icon" style="background-image: url('https://via.placeholder.com/300/FFD700');"></a>
+    <!-- Games Section -->
+    <h2>Games</h2>
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-subway-surfers/">
+                <img src="https://play-lh.googleusercontent.com/B-P9GyXgwh-ygo8Q8jBeZqPBYaAhQiRxrCkm6Xs23cbzalLk7OMqPsrLTut-H3qymLE=w240-h480-rw" alt="Subway Surfers">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-stickman-hook/">
+                <img src="https://images.dwncdn.net/images/t_app-icon-l/p/73a13543-d706-475c-bca5-8bdd46a1b02d/2523539307/2099_4-77972256-logo" alt="Stickman Hook">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-minecraft/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRup2cCnL0HdO36HCAVr81QFkgDe6li7VNVog&s" alt="Minecraft">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games-doodle-jump/">
+                <img src="https://play-lh.googleusercontent.com/aHnvdFTx0LVyfVHQLX51VcWBYkSVGvggr4FvIiP-iwBu4pKBiOQA1OnRi_nyFdCWqlU8" alt="Doodle Jump">
+            </a>
+        </div>
     </div>
 
-    <div class="snow-container" id="snowContainer"></div> <!-- Snow effect -->
-
-    <script>
-        // Snow effect generator
-        const snowContainer = document.getElementById('snowContainer');
-
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.textContent = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 2 + 2 + 's';
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-            snowflake.style.opacity = Math.random() * 0.8 + 0.2;
-
-            snowContainer.appendChild(snowflake);
-            setTimeout(() => snowflake.remove(), 5000);
-        }
-
-        function createSnowball() {
-            const snowball = document.createElement('div');
-            snowball.classList.add('snowball');
-            snowball.textContent = '⚪';
-            snowball.style.left = Math.random() * 100 + 'vw';
-            snowball.style.animationDuration = Math.random() * 2 + 1 + 's';
-
-            snowContainer.appendChild(snowball);
-            setTimeout(() => snowball.remove(), 5000);
-        }
-
-        setInterval(createSnowflake, 150);
-        setInterval(createSnowball, 100);
-    </script>
+    <!-- Apps Section -->
+    <h2>Apps</h2>
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/apps-calculator/">
+                <img src="https://cdn-icons-png.flaticon.com/512/2622/2622150.png" alt="Calculator App">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/apps-calendar/">
+                <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Calendar App">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/apps-notepad/">
+                <img src="https://cdn-icons-png.flaticon.com/512/3876/3876123.png" alt="Notepad App">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/apps-browser/">
+                <img src="https://cdn-icons-png.flaticon.com/512/3078/3078525.png" alt="Browser App">
+            </a>
+        </div>
+    </div>
 </body>
 </html>
