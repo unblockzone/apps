@@ -89,8 +89,8 @@
             color: #008CFF;
         }
 
-        /* New Section for Icons */
-        .icons-container {
+        /* Square Container for Images */
+        .square-container {
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -98,7 +98,7 @@
             flex-wrap: wrap;
         }
 
-        .icon {
+        .square {
             width: 300px; /* 300x300 size */
             height: 300px; /* 300x300 size */
             border-radius: 20px; /* Rounded corners */
@@ -110,17 +110,18 @@
             cursor: pointer;
         }
 
-        .icon img {
+        .square img {
             width: 80%;
             height: 80%;
             transition: transform 0.3s ease;
+            border-radius: 20px; /* Rounded corners for the image */
         }
 
-        .icon:hover {
+        .square:hover {
             transform: scale(1.1);
         }
 
-        .icon:hover img {
+        .square:hover img {
             transform: scale(1.05);
         }
     </style>
@@ -141,26 +142,26 @@
         <img src="https://cdn-icons-png.flaticon.com/512/61/61457.png" alt="Logo" class="logo" onclick="window.location.href='https://unblockzone.github.io/'">
     </header>
 
-    <!-- Icons Section -->
-    <div class="icons-container">
-        <!-- Icon 1 -->
-        <div class="icon" onclick="window.location.href='https://example.com/link1'">
-            <img src="https://via.placeholder.com/300" alt="Icon 1">
+    <!-- Square Container with 4 clickable images -->
+    <div class="square-container">
+        <!-- Square 1 -->
+        <div class="square" onclick="window.location.href='https://unblockzone.github.io/games-subway-surfers/'">
+            <img src="https://play-lh.googleusercontent.com/B-P9GyXgwh-ygo8Q8jBeZqPBYaAhQiRxrCkm6Xs23cbzalLk7OMqPsrLTut-H3qymLE=w240-h480-rw" alt="Square 1">
         </div>
 
-        <!-- Icon 2 -->
-        <div class="icon" onclick="window.location.href='https://example.com/link2'">
-            <img src="https://via.placeholder.com/300" alt="Icon 2">
+        <!-- Square 2 -->
+        <div class="square" onclick="window.location.href='https://unblockzone.github.io/games-stickman-hook/'">
+            <img src="https://images.dwncdn.net/images/t_app-icon-l/p/73a13543-d706-475c-bca5-8bdd46a1b02d/2523539307/2099_4-77972256-logo" alt="Square 2">
         </div>
 
-        <!-- Icon 3 -->
-        <div class="icon" onclick="window.location.href='https://example.com/link3'">
-            <img src="https://via.placeholder.com/300" alt="Icon 3">
+        <!-- Square 3 -->
+        <div class="square" onclick="window.location.href='https://unblockzone.github.io/games-minecraft/'">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRup2cCnL0HdO36HCAVr81QFkgDe6li7VNVog&s" alt="Square 3">
         </div>
 
-        <!-- Icon 4 -->
-        <div class="icon" onclick="window.location.href='https://example.com/link4'">
-            <img src="https://via.placeholder.com/300" alt="Icon 4">
+        <!-- Square 4 -->
+        <div class="square" onclick="window.location.href='https://unblockzone.github.io/games-doodle-jump/'">
+            <img src="https://play-lh.googleusercontent.com/aHnvdFTx0LVyfVHQLX51VcWBYkSVGvggr4FvIiP-iwBu4pKBiOQA1OnRi_nyFdCWqlU8" alt="Square 4">
         </div>
     </div>
 </body>
