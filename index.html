@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games & Apps</title>
-
-    <!-- Favicon link -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
+    <title>Apps</title>
 
     <style>
         html, body {
@@ -18,175 +15,82 @@
 
         body {
             background-color: black;
-            font-family: 'Bowlby One', sans-serif;
+            font-family: Arial, sans-serif;
             color: white;
             display: flex;
             flex-direction: column;
+            align-items: center;
             text-align: center;
-            position: relative;
         }
 
         header {
             background-color: #333;
+            padding: 10px;
+            width: 100%;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
+            align-items: center;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 1000;
         }
 
-        h1 {
-            font-size: 50px;
+        header h1 {
+            color: white;
             margin: 0;
-            display: inline-block;
-            transition: transform 0.3s ease;
+            font-size: 24px;
         }
 
-        h1:hover {
-            transform: scale(1.1);
-        }
-
-        .blue {
-            color: blue;
-        }
-
-        .white {
-            color: white;
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-button {
-            background-color: black;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 20px;
-            font-size: 18px;
-            text-decoration: none;
-            text-align: center;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .nav-button:hover {
-            transform: scale(1.1);
-            background-color: black;
-            box-shadow: 0px 0px 15px 4px #008CFF;
-            color: #008CFF;
-        }
-
-        .square-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .square {
+        .icon {
             width: 300px;
             height: 300px;
-            background-color: #444;
+            margin: 20px;
             border-radius: 15px;
-            margin: 10px;
             overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
+            transition: transform 0.3s;
         }
 
-        .square img {
+        .icon img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
 
-        .square:hover {
+        .icon:hover {
             transform: scale(1.1);
         }
 
-        .square:hover img {
+        .icon:hover img {
             transform: scale(1.2);
         }
 
-        .logo {
-            width: 30px;
-            height: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.2);
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="https://unblockzone.github.io">
-            <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
-        </a>
-        <div class="nav-buttons">
-            <a href="https://unblockzone.github.io/apps" class="nav-button">APPS</a>
-            <a href="https://unblockzone.github.io/games" class="nav-button">GAMES</a>
-            <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
-            <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
-            <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/61/61457.png" alt="Logo" class="logo">
+        <h1>Apps</h1>
     </header>
 
-    <!-- Games Section -->
-    <h2>Games</h2>
-    <div class="square-container">
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-subway-surfers/">
-                <img src="https://play-lh.googleusercontent.com/B-P9GyXgwh-ygo8Q8jBeZqPBYaAhQiRxrCkm6Xs23cbzalLk7OMqPsrLTut-H3qymLE=w240-h480-rw" alt="Subway Surfers">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-stickman-hook/">
-                <img src="https://images.dwncdn.net/images/t_app-icon-l/p/73a13543-d706-475c-bca5-8bdd46a1b02d/2523539307/2099_4-77972256-logo" alt="Stickman Hook">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-minecraft/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRup2cCnL0HdO36HCAVr81QFkgDe6li7VNVog&s" alt="Minecraft">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/games-doodle-jump/">
-                <img src="https://play-lh.googleusercontent.com/aHnvdFTx0LVyfVHQLX51VcWBYkSVGvggr4FvIiP-iwBu4pKBiOQA1OnRi_nyFdCWqlU8" alt="Doodle Jump">
-            </a>
-        </div>
-    </div>
-
-    <!-- Apps Section -->
-    <h2>Apps</h2>
-    <div class="square-container">
-        <div class="square">
-            <a href="https://unblockzone.github.io/apps-calculator/">
-                <img src="https://cdn-icons-png.flaticon.com/512/2622/2622150.png" alt="Calculator App">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/apps-calendar/">
-                <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Calendar App">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/apps-notepad/">
-                <img src="https://cdn-icons-png.flaticon.com/512/3876/3876123.png" alt="Notepad App">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/apps-browser/">
-                <img src="https://cdn-icons-png.flaticon.com/512/3078/3078525.png" alt="Browser App">
-            </a>
-        </div>
+    <div class="grid">
+        <a href="https://example.com/app1" class="icon">
+            <img src="https://via.placeholder.com/300" alt="App 1">
+        </a>
+        <a href="https://example.com/app2" class="icon">
+            <img src="https://via.placeholder.com/300" alt="App 2">
+        </a>
+        <a href="https://example.com/app3" class="icon">
+            <img src="https://via.placeholder.com/300" alt="App 3">
+        </a>
+        <a href="https://example.com/app4" class="icon">
+            <img src="https://via.placeholder.com/300" alt="App 4">
+        </a>
     </div>
 </body>
 </html>
