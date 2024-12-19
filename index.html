@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps</title>
+    <title>UnblockZone</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
 
     <style>
+        /* Reset styles and enable scrolling */
         html, body {
             margin: 0;
             padding: 0;
@@ -15,82 +19,145 @@
 
         body {
             background-color: black;
-            font-family: Arial, sans-serif;
+            font-family: 'Bowlby One', sans-serif;
             color: white;
             display: flex;
             flex-direction: column;
-            align-items: center;
             text-align: center;
         }
 
         header {
             background-color: #333;
-            padding: 10px;
-            width: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 10;
         }
 
-        header h1 {
-            color: white;
+        h1 {
+            font-size: 50px;
             margin: 0;
-            font-size: 24px;
+            transition: transform 0.3s ease;
         }
 
-        .icon {
-            width: 300px;
-            height: 300px;
-            margin: 20px;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .icon:hover {
+        h1:hover {
             transform: scale(1.1);
         }
 
-        .icon:hover img {
+        .blue {
+            color: blue;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background-color: black;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: scale(1.1);
+            background-color: black;
+            box-shadow: 0px 0px 15px 4px #008CFF;
+            color: #008CFF;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
             transform: scale(1.2);
         }
 
-        .grid {
+        .square-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
             margin-top: 20px;
+        }
+
+        .square {
+            width: 300px;
+            height: 300px;
+            background-color: #444;
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .square:hover {
+            transform: scale(1.1);
+        }
+
+        .square:hover img {
+            transform: scale(1.2);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Apps</h1>
+        <a href="https://unblockzone.github.io">
+            <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
+        </a>
+        <div class="nav-buttons">
+            <a href="https://unblockzone.github.io/apps" class="nav-button">APPS</a>
+            <a href="https://unblockzone.github.io/games" class="nav-button">GAMES</a>
+            <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
+            <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
+            <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/61/61457.png" alt="Logo" class="logo">
     </header>
 
-    <div class="grid">
-        <a href="https://example.com/app1" class="icon">
-            <img src="https://via.placeholder.com/300" alt="App 1">
-        </a>
-        <a href="https://example.com/app2" class="icon">
-            <img src="https://via.placeholder.com/300" alt="App 2">
-        </a>
-        <a href="https://example.com/app3" class="icon">
-            <img src="https://via.placeholder.com/300" alt="App 3">
-        </a>
-        <a href="https://example.com/app4" class="icon">
-            <img src="https://via.placeholder.com/300" alt="App 4">
-        </a>
+    <div class="square-container">
+        <div class="square">
+            <a href="https://unblockzone.github.io/apps">
+                <img src="https://via.placeholder.com/300x300?text=Apps" alt="Apps">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/games">
+                <img src="https://via.placeholder.com/300x300?text=Games" alt="Games">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/proxies">
+                <img src="https://via.placeholder.com/300x300?text=Proxies" alt="Proxies">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/exploits">
+                <img src="https://via.placeholder.com/300x300?text=Exploits" alt="Exploits">
+            </a>
+        </div>
     </div>
 </body>
 </html>
