@@ -59,37 +59,24 @@
 
         .nav-buttons {
             display: flex;
-            gap: 20px; /* Adjust spacing between buttons */
+            gap: 20px;
+            margin-left: auto; /* Slide buttons to the right */
         }
 
         .nav-button {
             background-color: black;
             color: white;
-            padding: 15px 40px; /* Larger padding for bigger buttons */
-            border-radius: 25px; /* Rounded corners */
-            font-size: 20px; /* Larger font size */
+            padding: 15px 25px;
+            border-radius: 20px;
+            font-size: 18px;
             text-decoration: none;
-            font-weight: bold;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid white; /* White border for more visibility */
         }
 
         .nav-button:hover {
             transform: scale(1.1);
             color: #008CFF;
-            box-shadow: 0px 0px 15px 3px #008CFF; /* Enhanced glow effect */
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .logo:hover {
-            transform: scale(1.2);
+            box-shadow: 0px 0px 15px 4px #008CFF; /* Glow effect on hover */
         }
 
         /* Square Container for Images */
@@ -128,45 +115,6 @@
         .square:hover img {
             transform: scale(1.05);
         }
-
-        /* Background with floating blue dots */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .dot {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: blue;
-            border-radius: 50%;
-            animation: float 10s infinite;
-            opacity: 0;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-                opacity: 0;
-            }
-            20% {
-                opacity: 1;
-            }
-            80% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
-        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -181,7 +129,7 @@
             <a href="https://unblockzone.github.io/proxies/" class="nav-button">PROXIES</a>
             <a href="https://unblockzone.github.io/exploits/" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
-            <a href="https://unblockzone.github.io/contact/" class="nav-button">CONTACT</a>
+            <a href="https://unblockzone.github.io/contact/" class="nav-button">CONTACT</a> <!-- CONTACT button -->
         </div>
     </header>
 
@@ -207,33 +155,5 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrK6M6snwoTzAWN6f4PmbiYmBhGRBHbttf4Q&s" alt="Square 4">
         </div>
     </div>
-
-    <!-- Background with floating blue dots -->
-    <div class="background" id="background"></div>
-
-    <script>
-        const background = document.getElementById('background');
-
-        function createDot() {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            dot.style.left = Math.random() * 100 + '%';
-            dot.style.animationDuration = Math.random() * 8 + 3 + 's';
-            dot.style.animationDelay = Math.random() * 2 + 's';
-            background.appendChild(dot);
-
-            dot.addEventListener('animationend', () => {
-                dot.remove();
-            });
-        }
-
-        for (let i = 0; i < 100; i++) {
-            createDot();
-        }
-
-        setInterval(() => {
-            createDot();
-        }, 500);
-    </script>
 </body>
 </html>
