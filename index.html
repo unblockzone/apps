@@ -57,9 +57,32 @@
             color: white;
         }
 
+        .nav-buttons {
+            display: flex;
+            gap: 20px; /* Adjust spacing between buttons */
+        }
+
+        .nav-button {
+            background-color: black;
+            color: white;
+            padding: 15px 40px; /* Larger padding for bigger buttons */
+            border-radius: 25px; /* Rounded corners */
+            font-size: 20px; /* Larger font size */
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid white; /* White border for more visibility */
+        }
+
+        .nav-button:hover {
+            transform: scale(1.1);
+            color: #008CFF;
+            box-shadow: 0px 0px 15px 3px #008CFF; /* Enhanced glow effect */
+        }
+
         .logo {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             transition: transform 0.3s ease;
             cursor: pointer;
@@ -67,27 +90,6 @@
 
         .logo:hover {
             transform: scale(1.2);
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 10px; /* Reduce spacing between buttons */
-        }
-
-        .nav-button {
-            background-color: black;
-            color: white;
-            padding: 10px 20px; /* Adjust padding for smaller buttons */
-            border-radius: 15px; /* Reduced border-radius for a compact look */
-            font-size: 16px; /* Slightly smaller font size */
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .nav-button:hover {
-            transform: scale(1.1);
-            color: #008CFF;
-            box-shadow: 0px 0px 10px 2px #008CFF; /* Subtle glow effect on hover */
         }
 
         /* Square Container for Images */
@@ -181,7 +183,6 @@
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
             <a href="https://unblockzone.github.io/contact/" class="nav-button">CONTACT</a>
         </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/61/61457.png" alt="Logo" class="logo" onclick="window.location.href='https://unblockzone.github.io/'">
     </header>
 
     <!-- Square Container with 4 clickable images -->
