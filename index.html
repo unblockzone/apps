@@ -25,7 +25,63 @@
             flex-direction: column;
             text-align: center;
             position: relative;
-            background: #000 url('https://www.transparenttextures.com/patterns/blue-bubble.png') repeat; /* Blue Dots background */
+            overflow: hidden;
+        }
+
+        /* Floating blue dots effect */
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            background-color: blue;
+            opacity: 0.6;
+            animation: float 10s linear infinite;
+        }
+
+        /* Keyframes for animating the floating effect */
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-200px) translateX(100px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(200px) translateX(-100px);
+                opacity: 0.6;
+            }
+        }
+
+        /* Add multiple dots with varying sizes and animation speeds */
+        .dot1 {
+            width: 10px;
+            height: 10px;
+            animation-duration: 12s;
+        }
+
+        .dot2 {
+            width: 15px;
+            height: 15px;
+            animation-duration: 8s;
+        }
+
+        .dot3 {
+            width: 20px;
+            height: 20px;
+            animation-duration: 10s;
+        }
+
+        .dot4 {
+            width: 25px;
+            height: 25px;
+            animation-duration: 14s;
+        }
+
+        .dot5 {
+            width: 30px;
+            height: 30px;
+            animation-duration: 6s;
         }
 
         header {
@@ -120,6 +176,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating blue dots -->
+    <div class="dot dot1"></div>
+    <div class="dot dot2"></div>
+    <div class="dot dot3"></div>
+    <div class="dot dot4"></div>
+    <div class="dot dot5"></div>
+
     <header>
         <h1 onclick="window.location.href='https://unblockzone.github.io/'">
             <span class="white">UNBLOCK</span><span class="blue">ZONE</span>
@@ -130,7 +193,7 @@
             <a href="https://unblockzone.github.io/proxies/" class="nav-button">PROXIES</a>
             <a href="https://unblockzone.github.io/exploits/" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
-            <a href="https://unblockzone.github.io/contact/" class="nav-button">CONTACT</a> <!-- CONTACT button -->
+            <a href="https://example.com/contact" class="nav-button">CONTACT</a> <!-- CONTACT button -->
         </div>
     </header>
 
