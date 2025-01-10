@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apps</title>
 
-    <!-- Temporary Favicon -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
 
     <style>
@@ -14,7 +13,8 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         body {
@@ -23,65 +23,8 @@
             color: white;
             display: flex;
             flex-direction: column;
+            align-items: center;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Floating blue dots effect */
-        .dot {
-            position: absolute;
-            border-radius: 50%;
-            background-color: blue;
-            opacity: 0.6;
-            animation: float 10s linear infinite;
-        }
-
-        /* Keyframes for animating the floating effect */
-        @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(-200px) translateX(100px);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(200px) translateX(-100px);
-                opacity: 0.6;
-            }
-        }
-
-        /* Add multiple dots with varying sizes and animation speeds */
-        .dot1 {
-            width: 10px;
-            height: 10px;
-            animation-duration: 12s;
-        }
-
-        .dot2 {
-            width: 15px;
-            height: 15px;
-            animation-duration: 8s;
-        }
-
-        .dot3 {
-            width: 20px;
-            height: 20px;
-            animation-duration: 10s;
-        }
-
-        .dot4 {
-            width: 25px;
-            height: 25px;
-            animation-duration: 14s;
-        }
-
-        .dot5 {
-            width: 30px;
-            height: 30px;
-            animation-duration: 6s;
         }
 
         header {
@@ -89,7 +32,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
+            padding: 10px 0;
+            width: 100%;
             position: sticky;
             top: 0;
             z-index: 10;
@@ -98,8 +42,9 @@
         h1 {
             font-size: 50px;
             margin: 0;
+            margin-left: 20px;
+            display: inline-block;
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
         h1:hover {
@@ -116,8 +61,8 @@
 
         .nav-buttons {
             display: flex;
-            gap: 10px; /* Reduced gap for closer buttons */
-            margin-left: auto; /* Slide buttons to the right */
+            gap: 10px;
+            margin-right: 20px;
         }
 
         .nav-button {
@@ -127,32 +72,48 @@
             border-radius: 20px;
             font-size: 18px;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .nav-button:hover {
             transform: scale(1.1);
+            background-color: black;
+            box-shadow: 0px 0px 15px 4px #008CFF;
             color: #008CFF;
-            box-shadow: 0px 0px 15px 4px #008CFF; /* Glow effect on hover */
         }
 
-        /* Square Container for Images */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .nav-buttons {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
         .square-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
             flex-wrap: wrap;
+            margin: 20px 0;
         }
 
         .square {
-            width: 300px; /* 300x300 size */
-            height: 300px; /* 300x300 size */
-            border-radius: 20px; /* Rounded corners */
-            background-color: black; /* Maintain dark background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 300px;
+            height: 300px;
+            background-color: #444;
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
         }
@@ -160,9 +121,8 @@
         .square img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure images are contained within the square and not distorted */
+            object-fit: cover;
             transition: transform 0.3s ease;
-            border-radius: 20px; /* Rounded corners for the image */
         }
 
         .square:hover {
@@ -170,53 +130,97 @@
         }
 
         .square:hover img {
-            transform: scale(1.05);
+            transform: scale(1.2);
         }
     </style>
+
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Floating blue dots -->
-    <div class="dot dot1"></div>
-    <div class="dot dot2"></div>
-    <div class="dot dot3"></div>
-    <div class="dot dot4"></div>
-    <div class="dot dot5"></div>
-
     <header>
-        <h1 onclick="window.location.href='https://unblockzone.github.io/'">
-            <span class="white">UNBLOCK</span><span class="blue">ZONE</span>
-        </h1>
+        <a href="https://unblockzone.github.io">
+            <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
+        </a>
         <div class="nav-buttons">
-            <a href="https://unblockzone.github.io/apps/" class="nav-button">APPS</a>
-            <a href="https://unblockzone.github.io/games/" class="nav-button">GAMES</a>
-            <a href="https://unblockzone.github.io/proxies/" class="nav-button">PROXIES</a>
-            <a href="https://unblockzone.github.io/exploits/" class="nav-button">EXPLOITS</a>
+            <a href="https://unblockzone.github.io/apps" class="nav-button">APPS</a>
+            <a href="https://unblockzone.github.io/games" class="nav-button">GAMES</a>
+            <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
+            <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
-            <a href="https://unblockzone.github.io/contact" class="nav-button">CONTACT</a> <!-- CONTACT button -->
+            <a href="https://unblockzone.github.io/contact" class="nav-button">CONTACT</a>
         </div>
     </header>
 
-    <!-- Square Container with 4 clickable images -->
+    <!-- Three Rows of Apps -->
     <div class="square-container">
-        <!-- Square 1 -->
-        <div class="square" onclick="window.location.href='https://rizz.kyleconstance.com/'">
-            <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Square 1">
+        <!-- Row 1 -->
+        <div class="square">
+            <a href="https://example.com/app1">
+                <img src="https://via.placeholder.com/300x300?text=App+1" alt="App 1">
+            </a>
         </div>
-
-        <!-- Square 2 -->
-        <div class="square" onclick="window.location.href='https://skibiditoilet.global.ssl.fastly.net/embed.html#https://ngg.frogiee.one/hub'">
-            <img src="https://miro.medium.com/v2/resize:fit:1000/1*YM7t6RluDCb0XT62yy2aqQ.png" alt="Square 2">
+        <div class="square">
+            <a href="https://example.com/app2">
+                <img src="https://via.placeholder.com/300x300?text=App+2" alt="App 2">
+            </a>
         </div>
-
-        <!-- Square 3 -->
-        <div class="square" onclick="window.location.href='https://gfn.co.kr/en/'">
-            <img src="https://img.icons8.com/color/512/nvidia.png" alt="Square 3">
+        <div class="square">
+            <a href="https://example.com/app3">
+                <img src="https://via.placeholder.com/300x300?text=App+3" alt="App 3">
+            </a>
         </div>
+        <div class="square">
+            <a href="https://example.com/app4">
+                <img src="https://via.placeholder.com/300x300?text=App+4" alt="App 4">
+            </a>
+        </div>
+    </div>
 
-        <!-- Square 4 -->
-        <div class="square" onclick="window.location.href='https://skibiditoilet.global.ssl.fastly.net/embed.html#https://www.tiktok.com'">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrK6M6snwoTzAWN6f4PmbiYmBhGRBHbttf4Q&s" alt="Square 4">
+    <div class="square-container">
+        <!-- Row 2 -->
+        <div class="square">
+            <a href="https://example.com/app5">
+                <img src="https://via.placeholder.com/300x300?text=App+5" alt="App 5">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://example.com/app6">
+                <img src="https://via.placeholder.com/300x300?text=App+6" alt="App 6">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://example.com/app7">
+                <img src="https://via.placeholder.com/300x300?text=App+7" alt="App 7">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://example.com/app8">
+                <img src="https://via.placeholder.com/300x300?text=App+8" alt="App 8">
+            </a>
+        </div>
+    </div>
+
+    <div class="square-container">
+        <!-- Row 3 -->
+        <div class="square">
+            <a href="https://example.com/app9">
+                <img src="https://via.placeholder.com/300x300?text=App+9" alt="App 9">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://example.com/app10">
+                <img src="https://via.placeholder.com/300x300?text=App+10" alt="App 10">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://example.com/app11">
+                <img src="https://via.placeholder.com/300x300?text=App+11" alt="App 11">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://example.com/app12">
+                <img src="https://via.placeholder.com/300x300?text=App+12" alt="App 12">
+            </a>
         </div>
     </div>
 </body>
