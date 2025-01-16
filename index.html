@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: black;
+            background: linear-gradient(to bottom, #2c0e0e, #000); /* Dark red and black gradient */
             font-family: 'Bowlby One', sans-serif;
             color: white;
             display: flex;
@@ -52,7 +52,7 @@
         }
 
         .blue {
-            color: blue;
+            color: red; /* Change "ZONE" to red */
         }
 
         .white {
@@ -79,8 +79,8 @@
         .nav-button:hover {
             transform: scale(1.1);
             background-color: black;
-            box-shadow: 0px 0px 15px 4px #008CFF;
-            color: #008CFF;
+            box-shadow: 0px 0px 15px 4px red; /* Red glow on hover */
+            color: red; /* Change text color to red on hover */
         }
 
         @media (max-width: 768px) {
@@ -133,6 +133,20 @@
         .square:hover img {
             transform: scale(1.2);
         }
+
+        .search-bar {
+            background-color: #333;
+            border-radius: 15px;
+            padding: 10px;
+            width: 300px;
+            margin: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-bar:focus {
+            box-shadow: 0px 0px 15px 4px red; /* Red glow on search bar focus */
+        }
+
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
