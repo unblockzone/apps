@@ -1,73 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnblockZone</title>
+    <title>Apps</title>
 
-    <!-- Favicon link -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/61/61457.png" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
 
     <style>
-        /* Prevent horizontal and vertical scrolling */
+        /* Prevent scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         body {
-            background: linear-gradient(-45deg, black, #330000, #660000, black);
-            background-size: 300% 300%;
-            animation: gradientAnimation 15s ease infinite;
+            background: linear-gradient(to bottom, #2c0e0e, #000); /* Dark red and black gradient */
             font-family: 'Bowlby One', sans-serif;
             color: white;
             display: flex;
             flex-direction: column;
+            align-items: center;
             text-align: center;
-            position: relative;
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
         }
 
         header {
             background-color: #333;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding: 10px 20px;
+            justify-content: space-between;
+            padding: 10px 0;
+            width: 100%;
             position: sticky;
             top: 0;
             z-index: 10;
-            gap: 15px;
         }
 
         h1 {
-            font-size: 45px;
+            font-size: 50px;
             margin: 0;
+            margin-left: 20px;
             display: inline-block;
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
         h1:hover {
             transform: scale(1.1);
         }
 
-        .red {
-            color: red;
+        .blue {
+            color: red; /* Change "ZONE" to red */
         }
 
         .white {
@@ -77,7 +63,7 @@
         .nav-buttons {
             display: flex;
             gap: 10px;
-            margin-left: 20px;
+            margin-right: 20px;
         }
 
         .nav-button {
@@ -94,180 +80,164 @@
         .nav-button:hover {
             transform: scale(1.1);
             background-color: black;
-            box-shadow: 0px 0px 15px 4px red;
-            color: red;
+            box-shadow: 0px 0px 15px 4px red; /* Red glow on hover */
+            color: red; /* Change text color to red on hover */
         }
 
-        .subtitle-container {
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .nav-buttons {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .nav-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        .square-container {
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
-            width: 100%;
-            margin-top: 20px;
-            position: relative;
+            flex-wrap: wrap;
+            margin: 20px 0;
         }
 
-        .subtitle {
-            font-size: 70px;
-            display: inline-block;
-            margin-bottom: 20px;
+        .square {
+            width: 300px;
+            height: 300px;
+            background-color: #444;
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .square img {
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        .subtitle .red {
-            color: red;
-            font-size: 100px;
-            display: block;
-        }
-
-        .subtitle .white {
-            color: white;
-        }
-
-        .subtitle:hover {
+        .square:hover {
             transform: scale(1.1);
         }
 
-        .custom-search-bar {
-            font-size: 18px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 30px;
-            width: 50%;
-            background-color: #555;
-            color: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .square:hover img {
+            transform: scale(1.2);
         }
 
-        .custom-search-bar:focus {
-            outline: none;
+        .search-bar {
+            background-color: #333;
+            border-radius: 15px;
+            padding: 10px;
+            width: 300px;
+            margin: 20px;
+            transition: box-shadow 0.3s ease;
         }
 
-        .custom-search-bar:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px 4px red;
+        .search-bar:focus {
+            box-shadow: 0px 0px 15px 4px red; /* Red glow on search bar focus */
         }
 
-        /* Background animations */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        /* Floating black shapes */
-        .shape {
-            position: absolute;
-            filter: blur(5px);
-            animation: floatUp 10s linear infinite;
-        }
-
-        .shape.triangle {
-            width: 0;
-            height: 0;
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            border-bottom: 60px solid black;
-        }
-
-        .shape.square {
-            width: 50px;
-            height: 50px;
-            background-color: black;
-        }
-
-        .shape.circle {
-            width: 50px;
-            height: 50px;
-            background-color: black;
-            border-radius: 50%;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-            }
-            100% {
-                transform: translateY(-100vh) scale(1);
-            }
-        }
     </style>
+
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 onclick="window.location.href='https://unblockzone.github.io/'">
-            <span class="white">UNBLOCK</span><span class="red">ZONE</span>
-        </h1>
+        <a href="https://unblockzone.github.io">
+            <h1><span class="white">UNBLOCK</span><span class="blue">ZONE</span></h1>
+        </a>
         <div class="nav-buttons">
-            <a href="https://unblockzone.github.io/apps/" class="nav-button">APPS</a>
-            <a href="https://unblockzone.github.io/games/" class="nav-button">GAMES</a>
-            <a href="https://unblockzone.github.io/proxies/" class="nav-button">PROXIES</a>
-            <a href="https://unblockzone.github.io/exploits/" class="nav-button">EXPLOITS</a>
+            <a href="https://unblockzone.github.io/apps" class="nav-button">APPS</a>
+            <a href="https://unblockzone.github.io/games" class="nav-button">GAMES</a>
+            <a href="https://unblockzone.github.io/proxies" class="nav-button">PROXIES</a>
+            <a href="https://unblockzone.github.io/exploits" class="nav-button">EXPLOITS</a>
             <a href="https://unblockzone.github.io/settings/" class="nav-button">SETTINGS</a>
-            <a href="https://unblockzone.github.io/contact/" class="nav-button">CONTACT</a>
+            <a href="https://unblockzone.github.io/contact" class="nav-button">CONTACT</a>
         </div>
     </header>
 
-    <div class="subtitle-container">
-        <div class="subtitle">
-            <span class="white">UNBLOCK</span>
-            <span class="red">ZONE</span>
+    <!-- Three Rows of Apps -->
+    <div class="square-container">
+        <!-- Row 1 -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/google/">
+                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Google">
+            </a>
         </div>
-        <input type="text" id="customSearchBar" class="custom-search-bar" placeholder="Search...">
+        <div class="square">
+            <a href="https://unblockzone.github.io/nowgg/">
+                <img src="https://mma.prnewswire.com/media/2475287/now_gg_Logo.jpg?p=publish" alt="App 2">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/geforcenow/">
+                <img src="https://play-lh.googleusercontent.com/vobh63LuLl3B59tlHTCrSdpWzH0b_IfOsOtpVFaLK-hNQnJiWntiUgQpnhlKeIeYXBM" alt="App 3">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/spotify/">
+                <img src="https://img.freepik.com/premium-vector/round-spotify-logo-isolated-white-background_469489-989.jpg" alt="App 4">
+            </a>
+        </div>
     </div>
 
-    <!-- Background with floating shapes -->
-    <div class="background" id="background"></div>
+    <div class="square-container">
+        <!-- Row 2 -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/tiktok/">
+                <img src="https://static.vecteezy.com/system/resources/previews/006/057/996/non_2x/tiktok-logo-on-transparent-background-free-vector.jpg" alt="App 5">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/youtube/">
+                <img src="https://img.freepik.com/premium-vector/square-youtube-logo-isolated-white-background_469489-911.jpg" alt="App 6">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/poki/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0UOfhJT5UOAzWznFy3EuIOh8dbEcRCeWfcQ&s" alt="App 7">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/y8/">
+                <img src="https://play-lh.googleusercontent.com/rrFtf3hQpmMUmwHdcsvsV6vNpjMP9wsbvt6PpVg6sUleu0iJrlqVQizckc49dNkFQho" alt="App 8">
+            </a>
+        </div>
+    </div>
 
-    <script>
-        const background = document.getElementById('background');
-
-        // Function to create floating shapes
-        function createShape() {
-            const shape = document.createElement('div');
-            const shapeType = ['triangle', 'square', 'circle'][Math.floor(Math.random() * 3)];
-            shape.classList.add('shape', shapeType);
-            shape.style.left = Math.random() * 100 + '%';
-            shape.style.animationDuration = Math.random() * 10 + 5 + 's';
-            shape.style.animationDelay = Math.random() * 5 + 's';
-            background.appendChild(shape);
-
-            shape.addEventListener('animationend', () => {
-                shape.remove();
-            });
-        }
-
-        // Create floating shapes at random intervals
-        for (let i = 0; i < 10; i++) {
-            createShape();
-        }
-
-        setInterval(() => {
-            createShape();
-        }, 1500);
-
-        // Redirect to search URL
-        const searchBar = document.getElementById('customSearchBar');
-        searchBar.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const query = encodeURIComponent(searchBar.value);
-                window.location.href = `https://unblockzone.github.io/google/?q=${query}`;
-            }
-        });
-
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(() => console.log('Service Worker registered successfully.'))
-                .catch(err => console.log('Service Worker registration failed:', err));
-        }
-    </script>
+    <div class="square-container">
+        <!-- Row 3 -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/snapchat/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI5jvTqOh-bw-ivgqj2igxf_xspuocaF3L2A&s" alt="App 9">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/pinterest/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHUXt1TCn7LwMN9dlTntBYvWZ1WgDyYtUnw&s" alt="App 10">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/x/">
+                <img src="https://img.freepik.com/free-vector/twitter-new-2023-x-logo-white-background-vector_1017-45422.jpg?t=st=1736318955~exp=1736322555~hmac=e18cf9e6029304135165b82ed464408d342bcb0aa493964702c40b1f8d04888c" alt="App 11">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/twitch/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdvFdTju4u9zCmUa1CFdtyvcZSoQQBDEnH-A&s" alt="App 12">
+            </a>
+        </div>
+    </div>
 </body>
 </html>
