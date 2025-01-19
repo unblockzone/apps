@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +20,13 @@
         }
 
         body {
-            background: linear-gradient(to bottom, #2c0e0e, #000); /* Default dark red and black gradient */
+            background: linear-gradient(to bottom, #2c0e0e, #000); /* Dark red and black gradient */
             font-family: 'Bowlby One', sans-serif;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: background 0.5s ease, color 0.5s ease;
         }
 
         header {
@@ -148,34 +149,6 @@
             box-shadow: 0px 0px 15px 4px red; /* Red glow on search bar focus */
         }
 
-        /* Theme changer styles */
-        .theme-dots {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .theme-dot {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 0 10px 2px white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .theme-dot:hover {
-            transform: scale(1.5);
-            box-shadow: 0 0 15px 5px white;
-        }
-
-        .theme-pink { background-color: pink; }
-        .theme-blue { background-color: blue; }
-        .theme-red { background-color: red; }
-        .theme-green { background-color: green; }
-        .theme-black { background-color: black; }
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -195,35 +168,77 @@
         </div>
     </header>
 
-    <!-- App grid (unchanged) -->
+    <!-- Three Rows of Apps -->
     <div class="square-container">
-        <!-- Rows with squares -->
-        <!-- Content omitted for brevity -->
+        <!-- Row 1 -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/google/">
+                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Google">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/nowgg/">
+                <img src="https://mma.prnewswire.com/media/2475287/now_gg_Logo.jpg?p=publish" alt="App 2">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/geforcenow/">
+                <img src="https://play-lh.googleusercontent.com/vobh63LuLl3B59tlHTCrSdpWzH0b_IfOsOtpVFaLK-hNQnJiWntiUgQpnhlKeIeYXBM" alt="App 3">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/spotify/">
+                <img src="https://img.freepik.com/premium-vector/round-spotify-logo-isolated-white-background_469489-989.jpg" alt="App 4">
+            </a>
+        </div>
     </div>
 
-    <!-- Theme changer -->
-    <div class="theme-dots">
-        <div class="theme-dot theme-pink" onclick="setTheme('pink')"></div>
-        <div class="theme-dot theme-blue" onclick="setTheme('blue')"></div>
-        <div class="theme-dot theme-red" onclick="setTheme('red')"></div>
-        <div class="theme-dot theme-green" onclick="setTheme('green')"></div>
-        <div class="theme-dot theme-black" onclick="setTheme('black')"></div>
+    <div class="square-container">
+        <!-- Row 2 -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/tiktok/">
+                <img src="https://static.vecteezy.com/system/resources/previews/006/057/996/non_2x/tiktok-logo-on-transparent-background-free-vector.jpg" alt="App 5">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/youtube/">
+                <img src="https://img.freepik.com/premium-vector/square-youtube-logo-isolated-white-background_469489-911.jpg" alt="App 6">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/poki/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0UOfhJT5UOAzWznFy3EuIOh8dbEcRCeWfcQ&s" alt="App 7">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/y8/">
+                <img src="https://play-lh.googleusercontent.com/rrFtf3hQpmMUmwHdcsvsV6vNpjMP9wsbvt6PpVg6sUleu0iJrlqVQizckc49dNkFQho" alt="App 8">
+            </a>
+        </div>
     </div>
 
-    <script>
-        const themes = {
-            pink: { background: 'linear-gradient(to bottom, pink, black)', color: 'pink' },
-            blue: { background: 'linear-gradient(to bottom, darkblue, black)', color: 'blue' },
-            red: { background: 'linear-gradient(to bottom, #2c0e0e, #000)', color: 'red' },
-            green: { background: 'linear-gradient(to bottom, #003300, black)', color: 'green' },
-            black: { background: 'linear-gradient(to bottom, black, #222)', color: 'white' }
-        };
-
-        function setTheme(theme) {
-            const selectedTheme = themes[theme];
-            document.body.style.background = selectedTheme.background;
-            document.body.style.color = selectedTheme.color;
-        }
-    </script>
+    <div class="square-container">
+        <!-- Row 3 -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/snapchat/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI5jvTqOh-bw-ivgqj2igxf_xspuocaF3L2A&s" alt="App 9">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/pinterest/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHUXt1TCn7LwMN9dlTntBYvWZ1WgDyYtUnw&s" alt="App 10">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/x/">
+                <img src="https://img.freepik.com/free-vector/twitter-new-2023-x-logo-white-background-vector_1017-45422.jpg?t=st=1736318955~exp=1736322555~hmac=e18cf9e6029304135165b82ed464408d342bcb0aa493964702c40b1f8d04888c" alt="App 11">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/twitch/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdvFdTju4u9zCmUa1CFdtyvcZSoQQBDEnH-A&s" alt="App 12">
+            </a>
+        </div>
+    </div>
 </body>
 </html>
