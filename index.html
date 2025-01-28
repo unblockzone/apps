@@ -18,7 +18,9 @@
         }
 
         body {
-            background: linear-gradient(to bottom, #1e90ff, #000); /* Light blue and black gradient */
+            background: linear-gradient(to bottom, #1e90ff, #000);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             font-family: 'Bowlby One', sans-serif;
             color: white;
             display: flex;
@@ -29,7 +31,20 @@
             overflow: hidden;
         }
 
-        /* Floating hearts */
+        /* Moving background gradient */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating dots animation */
         @keyframes floatUp {
             0% {
                 transform: translateY(100vh) scale(0.5);
@@ -44,16 +59,16 @@
             }
         }
 
-        .heart {
+        .dot {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 10px;
+            height: 10px;
             background-color: #1e90ff;
-            clip-path: polygon(50% 0%, 61% 20%, 80% 20%, 100% 40%, 100% 71%, 50% 100%, 0 71%, 0 40%, 20% 20%, 39% 20%);
+            border-radius: 50%;
             animation: floatUp 5s infinite ease-in-out;
         }
 
-        .heart:nth-child(odd) {
+        .dot:nth-child(odd) {
             animation-duration: 7s;
         }
 
@@ -82,7 +97,7 @@
         }
 
         .blue {
-            color: #1e90ff; /* Change "ZONE" to light blue */
+            color: #1e90ff;
         }
 
         .white {
@@ -109,8 +124,8 @@
         .nav-button:hover {
             transform: scale(1.1);
             background-color: black;
-            box-shadow: 0px 0px 15px 4px #1e90ff; /* Light blue glow on hover */
-            color: #1e90ff; /* Change text color to light blue on hover */
+            box-shadow: 0px 0px 15px 4px #1e90ff;
+            color: #1e90ff;
         }
 
         @media (max-width: 768px) {
@@ -174,7 +189,7 @@
         }
 
         .search-bar:focus {
-            box-shadow: 0px 0px 15px 4px #1e90ff; /* Light blue glow on search bar focus */
+            box-shadow: 0px 0px 15px 4px #1e90ff;
         }
 
     </style>
@@ -196,7 +211,6 @@
         </div>
     </header>
 
-    <!-- Three Rows of Apps -->
     <div class="square-container">
         <!-- Row 1 -->
         <div class="square">
@@ -221,58 +235,10 @@
         </div>
     </div>
 
-    <div class="square-container">
-        <!-- Row 2 -->
-        <div class="square">
-            <a href="https://unblockzone.github.io/tiktok/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Gyv-nNqMCHsjpetXsOIZNWecFNzeNIoCCw&s" alt="TikTok">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/youtube/">
-                <img src="https://t3.ftcdn.net/jpg/04/74/05/94/360_F_474059464_qldYuzxaUWEwNTtYBJ44VN89ARuFktHW.jpg" alt="YouTube">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/poki/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0UOfhJT5UOAzWznFy3EuIOh8dbEcRCeWfcQ&s" alt="Poki">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/y8/">
-                <img src="https://play-lh.googleusercontent.com/rrFtf3hQpmMUmwHdcsvsV6vNpjMP9wsbvt6PpVg6sUleu0iJrlqVQizckc49dNkFQho" alt="Y8">
-            </a>
-        </div>
-    </div>
-
-    <div class="square-container">
-        <!-- Row 3 -->
-        <div class="square">
-            <a href="https://unblockzone.github.io/snapchat/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI5jvTqOh-bw-ivgqj2igxf_xspuocaF3L2A&s" alt="App 9">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/pinterest/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHUXt1TCn7LwMN9dlTntBYvWZ1WgDyYtUnw&s" alt="App 10">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/x/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS62YcZkVmUr4XYta6QpUAJSP76w99oV5OGig&s" alt="App 11">
-            </a>
-        </div>
-        <div class="square">
-            <a href="https://unblockzone.github.io/twitch/">
-                <img src="https://i.pinimg.com/736x/75/2b/26/752b26e033e8f6158eeb4d565b86e8c6.jpg" alt="Twitch">
-            </a>
-        </div>
-    </div>
-
-    <!-- Add floating hearts -->
-    <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
-    <div class="heart" style="left: 40%; animation-delay: 2s;"></div>
-    <div class="heart" style="left: 60%; animation-delay: 4s;"></div>
-    <div class="heart" style="left: 80%; animation-delay: 1s;"></div>
+    <!-- Add floating dots -->
+    <div class="dot" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="dot" style="left: 40%; animation-delay: 2s;"></div>
+    <div class="dot" style="left: 60%; animation-delay: 4s;"></div>
+    <div class="dot" style="left: 80%; animation-delay: 1s;"></div>
 </body>
 </html>
