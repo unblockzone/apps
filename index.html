@@ -18,13 +18,21 @@
         }
 
         body {
-            background: linear-gradient(to bottom, #2c0e0e, #000); /* Dark red and black gradient */
+            background: linear-gradient(90deg, lightblue, black); /* Initial gradient */
+            background-size: 400% 400%; /* Larger background for animation */
+            animation: gradientAnimation 10s ease infinite; /* Smooth moving gradient */
             font-family: 'Bowlby One', sans-serif;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         header {
