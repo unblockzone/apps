@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,12 +128,21 @@
         }
 
         .square img {
-            display: none; /* Remove app icons by hiding the images */
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
         .square:hover {
             transform: scale(1.1);
         }
+
+        .square:hover img {
+            transform: scale(1.2);
+        }
+
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -154,19 +164,67 @@
 
     <!-- Three Rows of Apps -->
     <div class="square-container">
-        <!-- Empty squares for the layout -->
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <!-- Row 1 -->
+        <div class="square">
+            <a href="https://unblockzone.github.io/google/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRB4kg1jgnqD5fEaCSHKMoUdFeTBj9CH_opA&s" alt="Google">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/nowgg/">
+                <img src="https://mma.prnewswire.com/media/2475287/now_gg_Logo.jpg?p=publish" alt="Now.gg">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/geforcenow/">
+                <img src="https://play-lh.googleusercontent.com/vobh63LuLl3B59tlHTCrSdpWzH0b_IfOsOtpVFaLK-hNQnJiWntiUgQpnhlKeIeYXBM" alt="Geforce Now">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/spotify/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSm4DYI1WRgRvR1gotro-Mn1ZehBZfb705g&s" alt="Spotify">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/tiktok/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Gyv-nNqMCHsjpetXsOIZNWecFNzeNIoCCw&s" alt="TikTok">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/youtube/">
+                <img src="https://t3.ftcdn.net/jpg/04/74/05/94/360_F_474059464_qldYuzxaUWEwNTtYBJ44VN89ARuFktHW.jpg" alt="YouTube">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/poki/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0UOfhJT5UOAzWznFy3EuIOh8dbEcRCeWfcQ&s" alt="Poki">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/y8/">
+                <img src="https://play-lh.googleusercontent.com/rrFtf3hQpmMUmwHdcsvsV6vNpjMP9wsbvt6PpVg6sUleu0iJrlqVQizckc49dNkFQho" alt="Y8">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/snapchat/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI5jvTqOh-bw-ivgqj2igxf_xspuocaF3L2A&s" alt="Snapchat">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/x/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS62YcZkVmUr4XYta6QpUAJSP76w99oV5OGig&s" alt="X">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/twitch/">
+                <img src="https://i.pinimg.com/736x/75/2b/26/752b26e033e8f6158eeb4d565b86e8c6.jpg" alt="Twitch">
+            </a>
+        </div>
+        <div class="square">
+            <a href="https://unblockzone.github.io/pinterest/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmHKXuhEdc0SZdZV4xJqoQR-TtKmFLyTKADA&s" alt="Pinterest">
+            </a>
+        </div>
     </div>
 </body>
 </html>
